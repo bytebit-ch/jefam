@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @attraction.name %>
+</p>
+
+<p>
+  <strong>Parish:</strong>
+  <%= @attraction.parish %>
+</p>
+
+<p>
+  <strong>Age range:</strong>
+  <%= @attraction.age_range %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @attraction.price %>
+</p>
+
+<p>
+  <strong>Attr url:</strong>
+  <%= @attraction.attr_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @attraction.description %>
+</p>
+
+<p>
+  <strong>Map url:</strong>
+  <%= @attraction.map_url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @attraction.user_id %>
+</p>
+
+<%= image_tag(@attraction.display_image_url) %>
+
+<%= link_to 'Edit', edit_attraction_path(@attraction) %> |
+<%= link_to 'Back', attractions_path %>

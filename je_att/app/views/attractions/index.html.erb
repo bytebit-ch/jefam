@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Attractions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Parish</th>
+      <th>Age range</th>
+      <th>Price</th>
+      <th>Attr url</th>
+      <th>Description</th>
+      <th>Map url</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @attractions.each do |attraction| %>
+      <tr>
+        <td><%= attraction.name %></td>
+        <td><%= attraction.parish %></td>
+        <td><%= attraction.age_range %></td>
+        <td><%= attraction.price %></td>
+        <td><%= attraction.attr_url %></td>
+        <td><%= attraction.description %></td>
+        <td><%= attraction.map_url %></td>\
+        <td><%= image_tag(attraction.display_image_url) %></td>
+       
+    
+        <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
+       
+      <%= button_to upvote_attraction_path(attraction) do %>
+          &#9650;
+          <br>
+          <span class="votes"><%= attraction.votes.count %></span>
+         <% end %>
+<br>
+      <%= attraction.comments.count %>
+          <%= link_to attraction_comments_path(attraction) do %>
+            <i class="fa fa-comment-o comment-icon"></i>
+            <br>
+          <% end %>
+          <br>
+      </tr>
+
+   
+  </tbody>
+</table>
+<%= link_to 'New Attraction', new_attraction_path %>
+ <% end %>
+<br>
+

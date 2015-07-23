@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JeAtt</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ </head>
+
+<body>
+
+ <%= link_to '+', new_attraction_path %>
+
+        <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Log in', new_user_session_path, class: 'login' %>
+        <% end %>
+
+     
+
+   
+
+
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+    
+  
+
+</body>
+</html>
+
+</body>
+</html>
