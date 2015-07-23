@@ -21,13 +21,13 @@
   <tbody>
     <% @attractions.each do |attraction| %>
       <tr>
-        <td><%= attraction.name %></td>
+        <td><%#= attraction.name %></td>
         <td><%= attraction.parish %></td>
         <td><%= attraction.age_range %></td>
         <td><%= attraction.price %></td>
-        <td><%= attraction.attr_url %></td>
-        <td><%= attraction.description %></td>
-        <td><%= attraction.map_url %></td>\
+        <td><a href="<%= attraction.attr_url %>"> <%= attraction.name %></a></td>
+        <td><%= attraction.description %> </td>
+        <td><a href = "<%= attraction.map_url %>"> <i class="fa fa-globe"></i></a></td>
         <td><%= image_tag(attraction.display_image_url) %></td>
        
     
