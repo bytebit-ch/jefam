@@ -15,9 +15,9 @@
 
       <div class="content-wrap group">
 
-        <a href="#" class="logo-wrap">
-          <h1 class="logo">LOL Jersey</h1>
-        </a>
+        
+          <h1 class="logo"><a href="#" class="logo-wrap">LOL Jersey</a></h1>
+        
 
         <div class="search-wrap">
           <i class="fa fa-search search-icon"></i>
@@ -25,19 +25,30 @@
           <i class="fa fa-close search-reset"></i>
         </div>
 
-        <a href="#" class="add-new-post">+</a> 
+       
+
+    <div class="menu">
+      <ul>
+        <li> Users </li>
+        <li> Comment </li>
+        <li> About </li>
+      </ul>
+      </div>
+
+    <div class="login"><% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Log in', new_user_session_path, class: 'login' %>
+          </div>
 
   </header>
 
   
 
 
- <%= link_to '+', new_attraction_path %>
+ <div class="new-attraction"><%= link_to 'Add new attraction', new_attraction_path %>
 
-        <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Log in', new_user_session_path, class: 'login' %>
+        </div>
         <% end %>
 
      
@@ -60,6 +71,7 @@
     </ul>
   </div>
   <p>
+  <div class="copyright">
     copyright
   </p>
 
