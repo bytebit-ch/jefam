@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JeAtt</title>
+  <title>LOL Jersey</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,13 +9,46 @@
  </head>
 
 <body>
+   <header class="main-header">
 
- <%= link_to '+', new_attraction_path %>
+    <div class="top-header">
 
-        <% if user_signed_in? %>
+      <div class="content-wrap group">
+
+        
+          <h1 class="logo"><a href="#" class="logo-wrap">LOL Jersey</a></h1>
+        
+
+        <div class="search-wrap">
+          <i class="fa fa-search search-icon"></i>
+          <input type="search" class="search-input" placeholder="Search for a product...">
+          <i class="fa fa-close search-reset"></i>
+        </div>
+
+       
+
+    <div class="menu">
+      <ul>
+        <li> Users </li>
+        <li> Comment </li>
+        <li> About </li>
+      </ul>
+      </div>
+
+    <div class="login"><% if user_signed_in? %>
           <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to 'Log in', new_user_session_path, class: 'login' %>
+          </div>
+
+  </header>
+
+  
+
+
+ <div class="new-attraction"><%= link_to 'Add new attraction', new_attraction_path %>
+
+        </div>
         <% end %>
 
      
@@ -25,11 +58,26 @@
 
 
       <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+     <!-- <p class="alert"><%= alert %></p> -->
 
       <%= yield %>
     
-  
+ <footer class="footer">
+  <div class="statics">
+    <ul>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Terms and Conditions</li>
+    </ul>
+  </div>
+  <p>
+  <div class="copyright">
+    copyright
+  </p>
+
+
+  </footer>
+ 
 
 </body>
 </html>
