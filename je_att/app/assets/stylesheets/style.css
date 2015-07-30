@@ -1,0 +1,48 @@
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box !important;
+     -moz-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+}
+
+.cf:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	background: #EFEFEF;
+}
+
+.attraction {
+	width: 100%;
+	border-bottom: 2px solid #AAA;
+	padding-top: 5px;
+}
+
+.picture {
+	float: left;
+	width: 370px;
+}
+
+.information {
+	float: left;
+	width: 400px;
+	margin-right: 50px;
+}
+
+.voting {
+	float: left;
+	width: 140px;
+}
+
+.edit_attr {
+	margin-top: 20px;
+}
+
+.vote_attr {
+	margin-top: 20px;
+}

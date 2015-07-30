@@ -1,6 +1,48 @@
 
 
-<h1>All comments for "<%= @attraction.name %> </h1>
+  <div class="wrapper">
+      <div class="attraction cf">
+        <div class="picture">
+          <%= image_tag(@attraction.display_image_url) %>     
+        </div>
+        <div class="information">
+          <div class="name">
+            <h2><%= @attraction.name %></h2>
+          </div>
+          <div class="parish">
+            Located in the parish of <%= @attraction.parish %>
+          </div>
+          <div class="age_range">
+            Age range <%= @attraction.age_range %>
+          </div>
+          <div class="price">
+            Price <%= @attraction.price %>
+          </div>
+          <div class="attr_url">
+            <a href="<%= @attraction.attr_url %>">Attraction web site</a>
+          </div>
+          <div class="description">
+            <%= @attraction.description %>
+          </div>
+          <div class="map_url">
+            <a href="<%= @attraction.map_url %>">Attraction location</a>
+          </div>
+        </div>
+
+
+        Comments <%= @attraction.comments.count %>
+        <%= link_to attraction_comments_path(@attraction) do %>
+            <i class="fa fa-comment-o comment-icon"></i>
+            <br>
+          <% end %>
+          <br>
+        </div>
+      </div>
+ </div>
+<br>
+
+
+<h1>All comments for <%= @attraction.name %> </h1>
 
 <% @comments.each do |comment| %>
 

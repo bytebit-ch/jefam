@@ -1,56 +1,60 @@
+
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Attractions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Parish</th>
-      <th>Age range</th>
-      <th>Price</th>
-      <th>Attr url</th>
-      <th>Description</th>
-      <th>Map url</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-
-  <tbody>
+<h1>Jersey Family Attractions</h1>
+  <div class="wrapper">
     <% @attractions.each do |attraction| %>
-      <tr>
-        <td><%= attraction.name %></td>
-        <td><%= attraction.parish %></td>
-        <td><%= attraction.age_range %></td>
-        <td><%= attraction.price %></td>
-        <td><%= attraction.attr_url %></td>
-        <td><%= attraction.description %></td>
-        <td><%= attraction.map_url %></td>\
-        <td><%= image_tag(attraction.display_image_url) %></td>
-       
-    
-        <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-       
-      <%= button_to upvote_attraction_path(attraction) do %>
-          &#9650;
+      <div class="attraction cf">
+        <div class="picture">
+          <%= image_tag(attraction.display_image_url) %>     
+        </div>
+        <div class="information">
+          <div class="name">
+            <h2><%= attraction.name %></h2>
+          </div>
+          <div class="parish">
+            Located in the parish of <%= attraction.parish %>
+          </div>
+          <div class="age_range">
+            Age range <%= attraction.age_range %>
+          </div>
+          <div class="price">
+            Price <%= attraction.price %>
+          </div>
+          <div class="attr_url">
+            <a href="<%= attraction.attr_url %>">Attraction web site</a>
+          </div>
+          <div class="description">
+            <%= attraction.description %>
+          </div>
+          <div class="map_url">
+            <a href="<%= attraction.map_url %>">Attraction location</a>
+          </div>
+        </div>
+      <div class="voting">
+        <div class= "edit_attr">
+          <%= link_to 'Edit Attraction', edit_attraction_path(attraction) %>
+        </div>
+        <div class="vote_attr">
+            <%= button_to upvote_attraction_path(attraction) do %>
+              &#9650;
+            <br>
+          <span class="votes">Votes <%= attraction.votes.count %></span>
+            <% end %>
           <br>
-          <span class="votes"><%= attraction.votes.count %></span>
-         <% end %>
-<br>
-      <%= attraction.comments.count %>
-          <%= link_to attraction_comments_path(attraction) do %>
+        </div>
+        Comments <%= attraction.comments.count %>
+        <%= link_to attraction_comments_path(attraction) do %>
             <i class="fa fa-comment-o comment-icon"></i>
             <br>
           <% end %>
           <br>
-      </tr>
-
-   
-  </tbody>
-</table>
-<%= link_to 'New Attraction', new_attraction_path %>
+        </div>
+      </div>
  <% end %>
+ </div>
 <br>
+<%= link_to 'New Attraction', new_attraction_path %>
 
