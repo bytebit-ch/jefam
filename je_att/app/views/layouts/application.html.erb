@@ -11,7 +11,7 @@
 <body>
    <header class="main-header">
 
-    <div class="top-header">
+    <div class="top-header cf">
 
       <div class="content-wrap group">
 
@@ -28,17 +28,18 @@
        
 
     <div class="menu">
-      <ul>
+     <ul>
         <li> Users </li>
         <li> Comment </li>
         <li> About </li>
       </ul>
-      </div>
+      </div> 
 
     <div class="login"><% if user_signed_in? %>
           <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to 'Log in', new_user_session_path, class: 'login' %>
+          <% end %>
           </div>
 
   </header>
@@ -49,7 +50,6 @@
  <div class="new-attraction"><%= link_to 'Add new attraction', new_attraction_path %>
 
         </div>
-        <% end %>
 
      
 
@@ -62,7 +62,7 @@
 
       <%= yield %>
     
- <footer class="footer">
+ <footer class="footer cf">
   <div class="statics">
     <ul>
       <li>About</li>
@@ -71,8 +71,8 @@
     </ul>
   </div>
   <p>
-  <div class="copyright">
-    copyright
+  <!--<div class="copyright">
+    copyright -->
   </p>
 
 

@@ -3,7 +3,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Jersey Family Attractions</h1>
+<!--<h1>Jersey Family Attractions</h1> -->
   <div class="wrapper">
     <% @attractions.each do |attraction| %>
       <div class="attraction cf">
@@ -46,7 +46,7 @@
 
           <br>
         </div>
-        Comments <%= attraction.comments.count %>
+         <%= attraction.comments.count %>
         <%= link_to attraction_comments_path(attraction) do %>
             <i class="fa fa-comment-o comment-icon"></i>
             <br>

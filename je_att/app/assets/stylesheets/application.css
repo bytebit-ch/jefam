@@ -30,8 +30,9 @@ body {
 
 
 .top-header {
-	background-color: #7FFF00;
+	background-color: #00FF66;
 	height: 150px;
+  
 	padding: 25px;
 	border-bottom-style: solid;
 	border-bottom-width: 10px;
@@ -69,10 +70,14 @@ body {
 }
 
 .login {
-	float: right;
+	position: absolute;
+  width: 100px;
+  right: 0;
+  bottom: 10px;
   color: #CCC;
   font-size: 1.8rem;
   line-height: 40px;
+  
 }
 .login:hover {
   color: #DA552F;
@@ -176,12 +181,13 @@ a {
 }
 
 .footer {
-	background-color: #7FFF00;
+	background-color: #00FF66;
 	height: 70px;
 	padding: 25px;
 	border-top-style: solid;
 	border-top-width: 10px;
 	border-top-color: #5121A3;
+  width: 1400px;
 }
 
 .statics ul {
@@ -206,4 +212,8 @@ a {
 	float: right;
 	color: #5121A3;
 
+}
+
+.main-header {
+  position: relative;
 }
